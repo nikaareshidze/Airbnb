@@ -29,10 +29,11 @@ export default function successHosting() {
 
   function saveProperty() {
     fetch(
-      `https://airbnb-clone-27fe7-default-rtdb.firebaseio.com/users/${localId}/properties.json`,
+      `https://airbnb-clone-27fe7-default-rtdb.firebaseio.com/apartments.json`,
       {
         method: "POST",
         body: JSON.stringify({
+          owner_id: localId,
           location: { city: city, country: country },
           apartment: {
             type: type,

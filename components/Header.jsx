@@ -53,26 +53,36 @@ export default function Header() {
       </div>
       <div>
         {!hidden && (
-          <div className="bg-white w-64 text-black border-2 border-[#e8e8e8] absolute top-24 right-20 flex flex-col ">
+          <div className="bg-white w-64 text-black border-2 border-[#e8e8e8] absolute top-24 right-20 flex flex-col space-y-3">
             {!isLoggedIn && (
               <>
-                <Link href="/signup" className="p-4 text-sm">
+                <Link href="/signup" className="p-4 hover:bg-slate-100 text-sm">
                   Sign up
                 </Link>
-                <Link href="/login" className="p-4 text-sm">
+                <Link href="/login" className="p-4 hover:bg-slate-100 text-sm">
                   Log In
                 </Link>
               </>
             )}
             {isLoggedIn && (
               <>
-                <Link href="/become-a-host" className="p-4 text-sm">
+                <Link
+                  href="/become-a-host"
+                  className="p-4 hover:bg-slate-100 text-sm"
+                >
                   Airbnb Your Home
                 </Link>
-                <Link href="/account-setting" className="p-4 text-sm">
+                <Link
+                  href="/account-setting"
+                  className="p-4 hover:bg-slate-100 text-sm"
+                >
                   Account
                 </Link>
-                <Link href="/" className="p-4 text-sm" onClick={logout}>
+                <Link
+                  href="/"
+                  className="p-4 hover:bg-slate-100 text-sm"
+                  onClick={logout}
+                >
                   Log out
                 </Link>
               </>

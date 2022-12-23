@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { myPropertyActions } from "../../../store/myProperty";
+import { useRouter } from "next/router";
 
 export default function step4() {
+  const router = useRouter();
+
   const dispatch = useDispatch();
 
   const {
@@ -30,8 +33,11 @@ export default function step4() {
   }
 
   function saveToMyProperty() {
-    const formData = new FormData();
-    formData.append("image", photos);
+    // const formData = new FormData();
+    // formData.append("image", photos);
+
+    setPhotos("https://source.unsplash.com/random/700x700");
+    router.push("/become-a-host/successHosting");
   }
 
   return (
@@ -47,9 +53,7 @@ export default function step4() {
         </h1>
         <input type="file" onChange={uploadImage} />
         <button onClick={saveToMyProperty} className="font-bold mt-8">
-          <Link href="/become-a-host/successHosting" className="font-bold mt-8">
-            Next
-          </Link>
+          Next
         </button>
       </div>
     </div>

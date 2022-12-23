@@ -4,8 +4,8 @@ import FilterDataItem from "./FilterDataItem";
 
 export default function Filter() {
   return (
-    <div className="flex justify-between items-center w-full px-20 mt-8 max-[800px]:px-10">
-      <div className="flex flex-row justify-start items-center space-x-8 w-10/12 h-20 overflow-x-auto max-[1235px]:w-9/12 max-[800px]:w-full">
+    <div className="flex justify-between items-center w-full px-20 mt-2 max-[800px]:px-10">
+      <div className="flex flex-row justify-start items-center gap-x-8 w-10/12 h-20 overflow-x-auto max-[1235px]:w-9/12 max-[800px]:w-full">
         {filterData.map((item, i) => (
           <FilterDataItem item={item} key={i} />
         ))}
