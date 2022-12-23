@@ -20,7 +20,11 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
