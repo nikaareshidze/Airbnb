@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
 import Logo from "./Logo";
 import Link from "next/link";
 import { usersActions } from "../store/usersSlice";
 
 export default function Header() {
+  const router = useRouter();
+
   const dispatch = useDispatch();
 
   const [hidden, setHidden] = useState(true);
@@ -27,6 +30,7 @@ export default function Header() {
   function logout(event) {
     event.preventDefault();
     setIsLoggedIn();
+    router.push("/login");
   }
 
   return (
@@ -71,6 +75,12 @@ export default function Header() {
                   className="p-4 hover:bg-slate-100 text-sm"
                 >
                   Airbnb Your Home
+                </Link>
+                <Link
+                  href="/my-properties"
+                  className="p-4 hover:bg-slate-100 text-sm"
+                >
+                  My Properties
                 </Link>
                 <Link
                   href="/account-setting"
