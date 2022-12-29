@@ -37,11 +37,14 @@ export default function myProperties() {
   return (
     <div>
       <Header />
-      <div className="flex items-center w-full px-20 mt-4">
-        <div className="flex flex-row justify-start items-center gap-x-4">
-          {properties.map((item, i) => (
-            <MyPropertyItems item={item} key={i} />
-          ))}
+      <div>
+        <h1 className="px-20 mt-4">My Properties</h1>
+        <div className="flex items-center w-full px-20 mt-4">
+          <div className="grid grid-cols-4 gap-x-4 gap-y-8">
+            {properties.map((item, i) => (
+              <MyPropertyItems item={item} key={i} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

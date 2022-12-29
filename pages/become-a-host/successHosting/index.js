@@ -12,18 +12,8 @@ export default function successHosting() {
     bedsNumber,
     bathroomsNumber,
     photos,
+    id,
   } = useSelector((state) => state.myPropertySlice);
-
-  console.log(
-    city,
-    country,
-    type,
-    guestsNumber,
-    bedroomsNumber,
-    bedsNumber,
-    bathroomsNumber,
-    photos
-  );
 
   const { localId } = useSelector((state) => state.usersSlice);
 
@@ -33,6 +23,7 @@ export default function successHosting() {
       {
         method: "POST",
         body: JSON.stringify({
+          id: id,
           owner_id: localId,
           location: { city: city, country: country },
           apartment: {

@@ -27,16 +27,23 @@ export default function step4() {
   const setPhotos = (payload) => {
     dispatch(myPropertyActions.setPhotos(payload));
   };
+  const setId = (payload) => {
+    dispatch(myPropertyActions.setId(payload));
+  };
 
   function uploadImage(e) {
     setPhotos(e.target.files[0].stream());
   }
 
   function saveToMyProperty() {
-    // const formData = new FormData();
-    // formData.append("image", photos);
+    let ID = "";
+    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$%^&*()";
+    for (var i = 0; i < 30; i++) {
+      ID += characters.charAt(Math.floor(Math.random() * 36));
+    }
 
     setPhotos("https://source.unsplash.com/random/700x700");
+    setId(ID);
     router.push("/become-a-host/successHosting");
   }
 

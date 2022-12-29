@@ -10,6 +10,7 @@ const myPropertyInitialState = {
   bathroomsNumber: 1,
   photos: "",
   description: "null",
+  id: "",
 };
 
 const myPropertySlice = createSlice({
@@ -54,6 +55,9 @@ const myPropertySlice = createSlice({
     },
     setPhotos(state, action) {
       state.photos = action.payload;
+    },
+    setId(state, action) {
+      state.id = action.payload;
     },
   },
 });
