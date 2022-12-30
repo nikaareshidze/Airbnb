@@ -42,7 +42,7 @@ export default function step4() {
       ID += characters.charAt(Math.floor(Math.random() * 36));
     }
 
-    setPhotos("https://source.unsplash.com/random/700x700");
+    setPhotos("https://source.unsplash.com/random/700x700/?city,night");
     setId(ID);
     router.push("/become-a-host/successHosting");
   }

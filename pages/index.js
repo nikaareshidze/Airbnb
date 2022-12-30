@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Filter from "../components/Filter/Filter";
+import Footer from "../components/Footer";
 import React from "react";
 import { useState, useEffect } from "react";
 import MyPropertyItems from "../components/MyPropertyItems/MyPropertyItems";
@@ -27,7 +28,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
+      <div className="h-16 flex justify-center items-center bg-[#f7f7f7]">
+        <h1 className="font-medium">
+          Show total prices up front <span> </span>
+          <span className="underline">Learn More</span>
+        </h1>
+      </div>
       <Header />
       <Filter />
       <div className="px-20 mt-8 mb-8 grid grid-cols-4 gap-x-4 gap-y-8">
@@ -35,6 +42,7 @@ export default function Home() {
           <MyPropertyItems item={item} key={i} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
