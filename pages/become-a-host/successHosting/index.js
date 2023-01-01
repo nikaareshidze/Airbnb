@@ -1,8 +1,11 @@
 import React from "react";
 import Header from "../../../components/Header";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 export default function successHosting() {
+  const router = useRouter();
+
   const {
     city,
     country,
@@ -41,13 +44,22 @@ export default function successHosting() {
           "Content-Type": `application/json`,
         },
       }
-    );
+    ).then(() => {
+      router.push("/");
+    });
   }
 
   return (
     <div>
       <Header />
-      <button onClick={saveProperty}>Save</button>
+      <div className="w-full min-h-screen flex items-center justify-center">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          onClick={saveProperty}
+        >
+          Save
+        </button>
+      </div>
     </div>
   );
 }

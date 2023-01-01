@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <div className="relative">
       {shown ? (
-        <div className="h-44 px-20 border-[#ebebeb] border max-[800px]:px-10">
+        <div className="h-40 px-20 border-[#ebebeb] border max-[800px]:px-10">
           <div className="h-20 flex justify-between items-center  max-[800px]:px-10">
             <Link href="/">
               <Logo />
@@ -119,8 +119,8 @@ export default function Header() {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <div className="flex justify-center items-center text-sm border-[#eeeeee] border py-3 rounded-[56px] mb-2">
-              <div className="border-r border-[#eeeeee] tracking-normal cursor-pointer pl-8 pr-24">
+            <div className="flex justify-center items-center text-sm border-[#eeeeee] border py-2 rounded-[56px] mb-2">
+              <div className="border-r border-[#eeeeee] tracking-normal cursor-pointer pl-8 pr-36">
                 <h1 className="font-semibold text-xs">Where</h1>
                 <h1 className="text-[#222222] text-sm cursor-text">
                   Search destinations

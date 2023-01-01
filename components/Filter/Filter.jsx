@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import filterData from "./filterData";
 import FilterDataItem from "./FilterDataItem";
 
 export default function Filter() {
+  const { shown } = useSelector((state) => state.reservationSlice);
   return (
     <div className="flex justify-between items-center w-full px-20 mt-4 max-[800px]:px-10">
       <div className="flex flex-row justify-start items-center gap-x-4 w-10/12 overflow-x-auto max-[1235px]:w-9/12 max-[800px]:w-full">

@@ -51,39 +51,54 @@ export default function step2() {
     <div>
       <Header />
       {finalResult ? (
-        <div>
-          <h1>{stateX.country}</h1>
-          <h1>{stateX.city}</h1>
-          <h1>{stateX.description}</h1>
-          <div className="flex">
-            <button onClick={showLocation}>Back</button>
-            <Link href="/become-a-host/step-3-collect-info">Next</Link>
+        <div className="w-full min-h-screen flex items-center justify-center flex-col">
+          <h1>Country: {stateX.country}</h1>
+          <h1>City: {stateX.city}</h1>
+          <h1>Description: {stateX.description}</h1>
+          <div className="flex gap-x-2 mt-2">
+            <button
+              onClick={showLocation}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Back
+            </button>
+            <Link
+              href="/become-a-host/step-3-collect-info"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Next
+            </Link>
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-2">
-          <input
-            {...register("country")}
-            placeholder="Select Country"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-          <input
-            {...register("city")}
-            placeholder="Select City"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-          <input
-            {...register("description")}
-            placeholder="Description"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-          <button
-            className="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 mt-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
-            type="submit"
+        <div className="flex justify-center items-center">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-96 flex flex-col mt-4 gap-y-3"
           >
-            Continue
-          </button>
-        </form>
+            <input
+              {...register("country")}
+              placeholder="Select Country"
+              className="bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <input
+              {...register("city")}
+              placeholder="Select City"
+              className="bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <input
+              {...register("description")}
+              placeholder="Description"
+              className="bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Continue
+            </button>
+          </form>
+        </div>
       )}
     </div>
   );

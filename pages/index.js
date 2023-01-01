@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Filter from "../components/Filter/Filter";
 import Footer from "../components/Footer";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import MyPropertyItems from "../components/MyPropertyItems/MyPropertyItems";
 
@@ -37,11 +38,13 @@ export default function Home() {
       </div>
       <Header />
       <Filter />
+
       <div className="px-20 mt-8 mb-8 grid grid-cols-4 gap-x-4 gap-y-8">
         {properties.map((item, i) => (
           <MyPropertyItems item={item} key={i} />
         ))}
       </div>
+
       <Footer />
     </div>
   );
